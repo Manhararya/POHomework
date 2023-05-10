@@ -1,6 +1,5 @@
 package org.example;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 public class TestSuit extends BaseTest {
@@ -22,6 +21,11 @@ public class TestSuit extends BaseTest {
     CameraAndPhoto cameraAndPhoto = new CameraAndPhoto();
     LeicaTMirrorlessDigitalCamera leicaTMirrorlessDigitalCamera = new LeicaTMirrorlessDigitalCamera();
     ShoppingCart shoppingCart = new ShoppingCart();
+    NopCommerceNewRelease nopCommerceNewRelease = new NopCommerceNewRelease();
+    BuildYourOwnComputer buildYourOwnComputer = new BuildYourOwnComputer();
+    CheckOutPage checkoutPage = new CheckOutPage();
+    OrderConfirm orderConfirm = new OrderConfirm();
+    SocialMedia socialMedia = new SocialMedia();
 
     //Create all Test suit
     @Test
@@ -91,5 +95,49 @@ public class TestSuit extends BaseTest {
         leicaTMirrorlessDigitalCamera.addToCartButton16();
         leicaTMirrorlessDigitalCamera.shoppingCart();
         shoppingCart.productInShoppingCart();
+    }
+    @Test
+    public void verifyPrintoutProductTitle(){
+        homePage.printoutProductTitle();
+    }
+    @Test
+    public void verifySearchAlertMessage(){
+        homePage.searchAlertMessage();
+    }
+    @Test
+    public void verifyVoteAlertMessage(){
+        homePage.voteAlertMessage();
+    }
+    @Test
+    public void verifyProductPriceListWithCurrencySign(){
+        homePage.printoutProductPriceWithCurrencySign();
+    }
+    @Test
+    public void verifySearchProductList(){
+        homePage.printoutSearchProductList();
+    }
+    @Test
+    public void verifyNewReleaseCommentIsSuccessfullyAdded(){
+        homePage.nopCommerceNewRelease();
+        nopCommerceNewRelease.newReleaseComment();
+    }
+    @Test
+    public void verifyUserShouldBuildTheirOwnComputer(){
+        homePage.buildYourOwnComputer();
+        buildYourOwnComputer.assembleComputer();
+        shoppingCart.productInShoppingCart();
+        shoppingCart.checkout();
+        checkoutPage.guestButton();
+        checkoutPage.billingAddress();
+        checkoutPage.shippingMethod();
+        checkoutPage.paymentMethod();
+        checkoutPage.paymentInformation();
+        orderConfirm.getOrderConfirmation();
+    }
+    @Test
+    public void verifyFacebookPageOpen (){
+        homePage.facebookPage();
+        socialMedia.facebook();
+        homePage.welcomeToOurStore();
     }
 }

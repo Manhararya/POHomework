@@ -6,6 +6,7 @@ public class CameraAndPhoto extends Utils{
     // Click on Leica T Mirrorless Digital Camera
     By _leicaTMirrorlessDigitalCamera = By.linkText("Leica T Mirrorless Digital Camera");
     public void leicaTMirrorlessDigitalCamera() {
+        //connect to Xpath
         clickOnElement(_leicaTMirrorlessDigitalCamera);
     }
 }

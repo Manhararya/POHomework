@@ -12,6 +12,7 @@ public class EmailAFriend extends Utils {
     // Click on send email button
     By _sendEmail = By.name("send-email");
     public void nonUserEnterEmailDetails() {
+        //connect with Xpath
         typeText(_friendEmail, "Arya25@gmail.com");
         // Put your email address
         typeText(_yourEmail, "manhararya25@gmail.com");
@@ -21,6 +22,7 @@ public class EmailAFriend extends Utils {
         clickOnElement(_sendEmail);
     }
     public void userEnterEmailDetails() {
+        //connect with Xpath
         typeText(_friendEmail, "Arya25@gmail.com");
         // Type message
         typeText(_writeMessage, "This MacBook is a best");

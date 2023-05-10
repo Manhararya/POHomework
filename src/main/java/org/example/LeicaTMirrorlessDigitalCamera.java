@@ -8,9 +8,11 @@ public class LeicaTMirrorlessDigitalCamera extends Utils {
     // Click on Shopping cart
     By _shoppingCart = By.linkText("Shopping cart");
     public void addToCartButton16(){
+        //connect with Xpath
         clickOnElement(_addToCartButton16);
     }
     public void shoppingCart() {
+        //connect with Xpath
         clickOnElement(_shoppingCart);
     }
 }

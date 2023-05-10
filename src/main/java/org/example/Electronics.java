@@ -6,6 +6,7 @@ public class Electronics extends Utils{
     // Click on Camera & photo
     By _cameraAndPhoto = By.linkText("Camera & photo");
     public void CameraAndPhoto(){
+        //connect with Xpath
         clickOnElement(_cameraAndPhoto);
     }
 }

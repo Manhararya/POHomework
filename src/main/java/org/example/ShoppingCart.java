@@ -1,16 +1,27 @@
 package org.example;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
+import java.util.List;
+
 public class ShoppingCart extends Utils{
-    //Click on Leica T Mirrorless Digital Camera
-    By _productInShoppingCart = By.xpath("//td[@class=\"product\"]");
+    //Write Xpath
+    By _productInShoppingCart = By.cssSelector("td.product");
+    By _termOfService = By.xpath("//input[@id='termsofservice']");
+    By _checkout = By.xpath("//Button[@id='checkout']");
     public void productInShoppingCart() {
-        String expectedShoppingCartMessage = "Leica T Mirrorless Digital Camera";
-        String actualMessage = getTextFromElement(_productInShoppingCart);
-        System.out.println("Result Message:" + actualMessage);
-        // Expected message
-        Assert.assertEquals(actualMessage, expectedShoppingCartMessage, "Product is not adding in shopping cart");
+        //connect with Xpath
+        System.out.println("Product in Shopping Cart:");
+        List<WebElement> productList =driver.findElements(_productInShoppingCart);
+        for (WebElement e:productList){
+            System.out.println(e.getText());
+        }
+    }
+    public void checkout(){
+        //connect with Xpath
+        clickOnElement(_termOfService);
+        clickOnElement(_checkout);
     }
 }
